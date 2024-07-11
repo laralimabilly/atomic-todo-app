@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Atomic ToDo List Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an interactive to-do list application built using the principles of Atomic Design and TypeScript for enhanced type safety and structured code. The application is styled with CSS and includes features such as adding, editing, completing, and deleting tasks.
 
-## Available Scripts
+## Atomic Design Choices
 
-In the project directory, you can run:
+Atomic Design is a methodology for creating design systems by breaking down a UI into smaller, reusable components. The methodology consists of five stages: Atoms, Molecules, Organisms, Templates, and Pages. This project follows these principles to ensure maintainable and scalable code.
 
-### `npm start`
+- **Atoms**: Contains individual UI elements like Button, Checkbox, Input, and Modal.
+- **Molecules**: Combines atoms to form more complex components like TaskItem.
+- **Organisms**: Contains larger components that group molecules, such as TaskList.
+- **Templates**: Contains the layout structure of the application, such as TodoTemplate.
+- **Pages**: Contains the actual pages of the application, such as TodoPage.
+- **Types**: Contains TypeScript interfaces and types, such as Task.
+- **Utils**: Contains utility functions for local storage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+src/
+├── components/
+│   ├── atoms/
+│   │   ├── Button.tsx
+│   │   ├── Checkbox.tsx
+│   │   ├── Input.tsx
+│   │   └── Modal.tsx
+│   ├── molecules/
+│   │   └── TaskItem.tsx
+│   ├── organisms/
+│   │   └── TaskList.tsx
+├── pages/
+│   ├── __tests__
+│   │   └── TodoPage.test.tsx
+│   └── TodoPage.tsx
+├── templates/
+│   └── TodoTemplate.tsx
+├── types/
+│   └── Task.ts
+├── utils/
+│   ├── localStorage.ts
+└── index.tsx
+```
 
-### `npm test`
+## TypeScript
+TypeScript is used throughout the project to provide type safety and improve code maintainability. The Task interface defines the structure of a task object:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```typescript
+export interface Task {
+  id: string;
+  name: string;
+  completed: boolean;
+}
+```
 
-### `npm run build`
+## CSS Styling
+The application is styled using CSS with Atomic Design principles. Each component has its own styles, ensuring modular and reusable CSS.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+- Add Task: Users can add new tasks using the input field and the add button.
+- Edit Task: Users can edit the name of an existing task.
+- Complete Task: Users can mark tasks as completed or incomplete.
+- Delete Task: Users can delete tasks, with a confirmation modal prompting for deletion.
+- Persistent Storage: Tasks are saved to local storage and persist across page reloads.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the Project
+To run the project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**1**. Clone the repository
+```bash
+git clone https://github.com/your-username/atomic-todo-app.git
+cd atomic-todo-app
+```
 
-### `npm run eject`
+2. Install dependencies
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. Run the application
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open your browser and navigate to http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Tests
+This project includes unit tests using Jest. To run the tests, use the following command:
+```bash
+npm test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
+For any questions or feedback, please reach out to [laralimabilly@gmail.com].

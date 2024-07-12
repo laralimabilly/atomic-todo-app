@@ -67,7 +67,7 @@ To run the project locally, follow these steps:
 
 **1**. Clone the repository
 ```bash
-git clone https://github.com/your-username/atomic-todo-app.git
+git clone https://github.com/laralimabilly/atomic-todo-app.git
 cd atomic-todo-app
 ```
 
